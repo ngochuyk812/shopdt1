@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.bundle.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <link rel="stylesheet" href="../user/profile.css">
+        <style>
+                .custom-file-input {
+                        color: transparent;
+                        opacity: 1;
+
+
+                }
+
+                .custom-file-input::-webkit-file-upload-button {
+                        visibility: hidden;
+                }
+
+                .custom-file-input::before {
+                        content: 'Up Avatar';
+                        color: black;
+                        display: inline-block;
+                        background: -webkit-linear-gradient(top, #f9f9f9, #e3e3e3);
+                        border: 1px solid #999;
+                        border-radius: 3px;
+                        padding: 5px 8px;
+                        outline: none;
+                        white-space: nowrap;
+                        -webkit-user-select: none;
+                        cursor: pointer;
+                        text-shadow: 1px 1px #fff;
+                        font-weight: 700;
+                        font-size: 10pt;
+                }
+
+                .custom-file-input:hover::before {
+                        border-color: black;
+                }
+
+                .custom-file-input:active {
+                        outline: 0;
+                }
+
+                .custom-file-input:active::before {
+                        background: -webkit-linear-gradient(top, #e3e3e3, #f9f9f9);
+                }
+
+                body {
+                        padding: 20px;
+                }
+        </style>
+</head>
+
+<body>
+        <div class="container rounded bg-white mt-5 mb-5">
+                <div class="row">
+                        <div class="col-md-3 border-right">
+                                <div class="d-flex flex-column align-items-center text-center p-3 py-5"><img
+                                                class="rounded-circle mt-5" width="150px"
+                                                src="https://st3.depositphotos.com/15648834/17930/v/600/depositphotos_179308454-stock-illustration-unknown-person-silhouette-glasses-profile.jpg"><span
+                                                class="font-weight-bold">
+                                                <%=idUser[0].email%>
+                                        </span><span class="text-black-50"></span><span> </span></div>
+                        </div>
+                        <div class="col-md-5 border-right" style=" min-width: 70%">
+                                <div class="p-3 py-5">
+                                        <div class="d-flex justify-content-between align-items-center mb-3">
+                                                <h4 class="text-right">Profile Settings</h4>
+                                        </div>
+                                        <form action="/saveProfile" enctype="multipart/form-data" method="post">
+                                                <div class="row mt-2">
+                                                        <div class="col-md-6"><label class="labels">Name</label><input
+                                                                        type="text" class="form-control" name="name"
+                                                                        placeholder="first name" value="">
+                                                        </div>
+                                                        <div class="col-md-6"><label
+                                                                        class="labels">Surname</label><input type="text"
+                                                                        class="form-control" name="surname" value=""
+                                                                        placeholder="surname"></div>
+                                                </div>
+                                                <div class="row mt-3">
+                                                        <div class="col-md-12"><label class="labels">Mobile
+                                                                        Number</label><input type="text"
+                                                                        class="form-control" name="phone"
+                                                                        placeholder="enter phone number" value=""></div>
+                                                        <div class="col-md-12"><label class="labels">Address Line
+                                                                        1</label><input type="text" class="form-control"
+                                                                        name="address"
+                                                                        placeholder="enter address line 1" value="">
+                                                        </div>
+
+
+                                                        <input type="text" name="id" hidden value="<%=idUser[0].id%>">
+                                                        <br>
+
+                                                        <div class="col-md-12"><label class="labels">Avatar</label>
+                                                                <input type="file" class="form-control" name="image"
+                                                                        accept='image/*'>
+                                                        </div>
+
+                                                        <div class="mt-5 text-center"><button
+                                                                        class="btn btn-primary profile-button"
+                                                                        type="submit">Save
+                                                                        Profile</button></div>
+                                                </div>
+
+
+
+                                        </form>
+
+
+                                </div>
+                                <div class="col-md-4">
+
+                                </div>
+                        </div>
+                </div>
+        </div>
+        </div>
+</body>
+
+</html>
